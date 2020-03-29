@@ -8,13 +8,12 @@ import axios from "axios";
 
 function App() {
   const [data, setData] = useState([]);
+
   useEffect(() => {
     axios
-      .get(
-        "https://www.freelancer.com/api/projects/0.1/jobs/search/?job_names%5B%5D=PHP&job_names%5B%5D=website%20design"
-      )
+      .get(`https://pokeapi.co/api/v2/pokemon`)
       .then(res => {
-        setData(res.data.result);
+        setData(res.data.results);
       })
       .catch(err => console.log("API request App: ", err));
   }, []);
@@ -24,7 +23,6 @@ function App() {
       <div className="App">
         <Navbar />
         <Route path="/home" render={() => <Home data={data} />} />
-
         <Route path="/about" component={About} />
       </div>
     </Router>

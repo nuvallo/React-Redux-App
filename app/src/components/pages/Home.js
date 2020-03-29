@@ -1,12 +1,11 @@
 import React from "react";
+import PersonItem from "../items/PokomonItem";
 
 function Home({ data }) {
   console.log(data);
   return (
     <div>
-      {data.map(person => {
-        return <h1>{person.name}</h1>;
-      })}
+      <PersonItem pokomon={data} key={data.id} />
     </div>
   );
 }

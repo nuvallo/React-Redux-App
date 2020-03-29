@@ -6,7 +6,9 @@ function Navbar() {
   return (
     <Fragment>
       <NavbarStyled>
-        <a className="brand">Redux App</a>
+        <Link to="/home" className="brand">
+          Redux App
+        </Link>
         <ul>
           <li>
             <Link to="/home" className="link">
@@ -39,6 +41,8 @@ const NavbarStyled = styled.nav`
   .brand {
     font-size: 30px;
     font-weight: bold;
+    color: #fff;
+    text-decoration: none;
   }
   ul {
     display: flex;
